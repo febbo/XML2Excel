@@ -6,7 +6,19 @@ from openpyxl import Workbook
 
 def repair_xml_entities(xml_path):
     """
-    Repair an XML file by replacing the <, > characters and common HTML entities with valid XML entities
+    Repairs an XML file by replacing invalid characters and HTML entities with valid XML entities.
+
+    The function works by:
+    1. Reading the source XML file
+    2. Finding content within <column> tags
+    3. Replacing problematic characters and entities
+    4. Saving the repaired content to a new file
+
+    Args:
+        xml_path (str): Path to the XML file that needs repair
+
+    Returns:
+        str: Path to the repaired XML file
     """
     base, ext = os.path.splitext(xml_path)
     output_path = f"{base}_repaired{ext}"
@@ -14,18 +26,30 @@ def repair_xml_entities(xml_path):
     with open(xml_path, "r", encoding="utf-8", errors="replace") as file:
         content = file.read()
 
+    # Regular expression to match column tags and their content
     pattern = r"(<column[^>]*>)(.*?)(<\/column>)"
 
     def replace_entities(match):
+        """
+        Helper function to process each matched column tag and its content.
+        Replaces HTML entities and special characters with valid XML entities.
+
+        Args:
+            match: A regex match object containing the column tag and its content
+
+        Returns:
+            str: The processed tag with properly escaped content
+        """
         tag_open = match.group(1)
         content = match.group(2)
         tag_close = match.group(3)
 
+        # Replace angle brackets with XML entities
         content = content.replace("<", "&lt;")
         content = content.replace(">", "&gt;")
 
+        # Replace common HTML entities with plain text equivalents
         content = content.replace("&nbsp;", " ")
-
         content = content.replace("&ndash;", "-")
         content = content.replace("&mdash;", "-")
         content = content.replace("&copy;", "(c)")
@@ -44,20 +68,24 @@ def repair_xml_entities(xml_path):
         content = content.replace("&pound;", "GBP")
         content = content.replace("&yen;", "JPY")
 
+        # Temporarily protect standard XML entities
         content = content.replace("&amp;", "&_amp_temp;")
         content = content.replace("&lt;", "&_lt_temp;")
         content = content.replace("&gt;", "&_gt_temp;")
         content = content.replace("&quot;", "&_quot_temp;")
         content = content.replace("&apos;", "&_apos_temp;")
 
+        # Remove any remaining unrecognized entities
         content = re.sub(r"&[a-zA-Z0-9#]+;", "", content)
 
+        # Restore the protected XML entities
         content = content.replace("&_amp_temp;", "&amp;")
         content = content.replace("&_lt_temp;", "&lt;")
         content = content.replace("&_gt_temp;", "&gt;")
         content = content.replace("&_quot_temp;", "&quot;")
         content = content.replace("&_apos_temp;", "&apos;")
 
+        # Replace any remaining standalone ampersands with &amp;
         content = re.sub(r"&(?!(amp;|lt;|gt;|quot;|apos;))", "&amp;", content)
 
         return tag_open + content + tag_close
@@ -72,12 +100,26 @@ def repair_xml_entities(xml_path):
 
 
 def main():
+    """
+    Main function that orchestrates the XML repair and Excel conversion process.
+
+    The function:
+    1. Prompts the user for the XML filename
+    2. Repairs the XML file to ensure it's well-formed
+    3. Parses the repaired XML file
+    4. Creates an Excel workbook with sheets for each second-level element in the XML
+    5. Populates each sheet with data from the XML records
+    """
+    # Get the directory where the script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Prompt user for XML file name
     xml_file = input(
         "Inserisci il nome del file XML (deve essere nella stessa cartella): "
     )
     xml_path = os.path.join(script_dir, xml_file)
 
+    # Validate file existence
     if not os.path.isfile(xml_path):
         print(f"Errore: Il file {xml_file} non esiste nella cartella {script_dir}")
         return
@@ -86,6 +128,7 @@ def main():
         print("Riparazione del file XML in corso...")
         repaired_xml_path = repair_xml_entities(xml_path)
 
+        # Prepare Excel output filename
         excel_output = (
             os.path.splitext(os.path.basename(repaired_xml_path))[0] + ".xlsx"
         )
@@ -96,14 +139,18 @@ def main():
         tree = ET.parse(repaired_xml_path, parser)
         root = tree.getroot()
 
+        # Create a new workbook and remove the default sheet
         wb = Workbook()
         wb.remove(wb.active)
 
         print("Creazione dei fogli Excel...")
 
+        # Process each second-level element in the XML structure
         for second_level in root:
+            # Use element tag as sheet name, limiting to Excel's 31-character max
             sheet_name = second_level.tag[:31]
 
+            # Handle duplicate sheet names by adding a counter
             counter = 1
             base_name = sheet_name
             while sheet_name in wb.sheetnames:
@@ -112,22 +159,29 @@ def main():
 
             ws = wb.create_sheet(title=sheet_name)
 
+            # Collect all unique column names from the records
             column_names = set()
             for record in second_level.findall("record"):
                 for column in record.findall("column"):
                     if "name" in column.attrib:
                         column_names.add(column.attrib["name"])
 
+            # Sort column names for consistent output
             column_names = sorted(list(column_names))
 
+            # Write header row with column names
             for col_idx, col_name in enumerate(column_names, 1):
                 ws.cell(row=1, column=col_idx, value=col_name)
 
+            # Start data rows from row 2 (after header)
             row_idx = 2
             record_count = 0
+
+            # Process each record and write to Excel
             for record in second_level.findall("record"):
                 record_count += 1
 
+                # Extract data from each column in the record
                 record_data = {}
                 for column in record.findall("column"):
                     if "name" in column.attrib:
@@ -135,6 +189,7 @@ def main():
                         col_value = column.text if column.text else ""
                         record_data[col_name] = col_value
 
+                # Write record data to the appropriate cells
                 for col_idx, col_name in enumerate(column_names, 1):
                     if col_name in record_data:
                         ws.cell(
@@ -147,6 +202,7 @@ def main():
                 f"Foglio '{sheet_name}' creato con {record_count} record e {len(column_names)} colonne"
             )
 
+        # Save the completed Excel workbook
         wb.save(excel_path)
         print(f"File Excel creato con successo: {excel_output}")
 
