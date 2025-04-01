@@ -23,13 +23,13 @@ This Python script converts XML files to Excel format, creating a separate works
 - Libraries: pandas, openpyxl, xml.etree.ElementTree
 - To install the necessary dependencies:
 
-```python
+```
 pip install pandas openpyxl
 ```
 
 - Alternatively, you can install all dependencies from the requirements.txt file:
 
-```python
+```
 pip install -r requirements.txt
 ```
 
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 - Place the XML file and Python script in the same directory
 - Run the script:
 
-```python
+```
 python script.py
 ```
 

@@ -23,13 +23,13 @@ Questo script Python converte file XML in formato Excel, creando un foglio di ca
 - Librerie: pandas, openpyxl, xml.etree.ElementTree
 - Per installare le dipendenze necessarie:
 
-```python
+```
 pip install pandas openpyxl
 ```
 
 - In alternativa, è possibile installare tutte le dipendenze dal file requirements.txt:
 
-```python
+```
 pip install -r requirements.txt
 ```
 
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 - Posizionare il file XML e lo script Python nella stessa directory
 - Eseguire lo script:
 
-```python
+```
 python script.py
 ```
 
