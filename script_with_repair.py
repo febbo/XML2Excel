@@ -129,9 +129,16 @@ def main():
         repaired_xml_path = repair_xml_entities(xml_path)
 
         # Prepare Excel output filename
-        excel_output = (
-            os.path.splitext(os.path.basename(repaired_xml_path))[0] + ".xlsx"
-        )
+        excel_output = input(
+            "Inserisci il nome del file Excel di output (o premi Invio per usare lo stesso nome): "
+        ).strip()
+        if not excel_output:
+            excel_output = (
+                os.path.splitext(os.path.basename(repaired_xml_path))[0] + ".xlsx"
+            )
+        elif not excel_output.lower().endswith(".xlsx"):
+            excel_output += ".xlsx"
+
         excel_path = os.path.join(script_dir, excel_output)
 
         print("Parsing del file XML riparato...")
