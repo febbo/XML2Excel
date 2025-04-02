@@ -1,0 +1,417 @@
+<root>
+    <section1>
+        <record>
+            <column type="string" name="product_name">Ergonomic Chair</column>
+            <column type="numeric" name="product_id">10024</column>
+            <column type="decimal" name="price">189.99</column>
+            <column type="string" name="category">Office Furniture</column>
+            <column type="date" name="last_restock">2025-01-15</column>
+            <column type="numeric" name="stock_level">45</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Adjustable Desk</column>
+            <column type="numeric" name="product_id">10025</column>
+            <column type="decimal" name="price">349.95</column>
+            <column type="string" name="category">Office Furniture</column>
+            <column type="date" name="last_restock">2025-02-03</column>
+            <column type="numeric" name="stock_level">32</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Mesh Backrest</column>
+            <column type="numeric" name="product_id">10026</column>
+            <column type="decimal" name="price">49.99</column>
+            <column type="string" name="category">Accessories</column>
+            <column type="date" name="last_restock">2025-01-20</column>
+            <column type="numeric" name="stock_level">78</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Monitor Stand</column>
+            <column type="numeric" name="product_id">10027</column>
+            <column type="decimal" name="price">59.95</column>
+            <column type="string" name="category">Accessories</column>
+            <column type="date" name="last_restock">2025-02-10</column>
+            <column type="numeric" name="stock_level">53</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Desk Lamp</column>
+            <column type="numeric" name="product_id">10028</column>
+            <column type="decimal" name="price">39.99</column>
+            <column type="string" name="category">Lighting</column>
+            <column type="date" name="last_restock">2025-01-25</column>
+            <column type="numeric" name="stock_level">62</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Filing Cabinet</column>
+            <column type="numeric" name="product_id">10029</column>
+            <column type="decimal" name="price">129.95</column>
+            <column type="string" name="category">Office Furniture</column>
+            <column type="date" name="last_restock">2025-03-01</column>
+            <column type="numeric" name="stock_level">28</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Desk Organizer</column>
+            <column type="numeric" name="product_id">10030</column>
+            <column type="decimal" name="price">24.99</column>
+            <column type="string" name="category">Accessories</column>
+            <column type="date" name="last_restock">2025-02-15</column>
+            <column type="numeric" name="stock_level">87</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Wireless Keyboard</column>
+            <column type="numeric" name="product_id">10031</column>
+            <column type="decimal" name="price">79.99</column>
+            <column type="string" name="category">Electronics</column>
+            <column type="date" name="last_restock">2025-01-10</column>
+            <column type="numeric" name="stock_level">41</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Wireless Mouse</column>
+            <column type="numeric" name="product_id">10032</column>
+            <column type="decimal" name="price">45.99</column>
+            <column type="string" name="category">Electronics</column>
+            <column type="date" name="last_restock">2025-01-10</column>
+            <column type="numeric" name="stock_level">52</column>
+        </record>
+        <record>
+            <column type="string" name="product_name">Footrest</column>
+            <column type="numeric" name="product_id">10033</column>
+            <column type="decimal" name="price">29.95</column>
+            <column type="string" name="category">Accessories</column>
+            <column type="date" name="last_restock">2025-02-20</column>
+            <column type="numeric" name="stock_level">35</column>
+        </record>
+    </section1>
+
+    <section2>
+        <record>
+            <column type="string" name="employee_name">Marco Rossi</column>
+            <column type="numeric" name="employee_id">3042</column>
+            <column type="string" name="department">Marketing</column>
+            <column type="date" name="hire_date">2022-05-15</column>
+            <column type="string" name="position">Senior Marketing Specialist</column>
+            <column type="decimal" name="salary">65000.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Giulia Bianchi</column>
+            <column type="numeric" name="employee_id">3043</column>
+            <column type="string" name="department">IT</column>
+            <column type="date" name="hire_date">2021-11-03</column>
+            <column type="string" name="position">Software&nbsp;Developer</column>
+            <column type="decimal" name="salary">72000.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Alessandro Verdi</column>
+            <column type="numeric" name="employee_id">3044</column>
+            <column type="string" name="department">Finance</column>
+            <column type="date" name="hire_date">2019-08-21</column>
+            <column type="string" name="position">Financial Analyst</column>
+            <column type="decimal" name="salary">68500.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Sofia Romano</column>
+            <column type="numeric" name="employee_id">3045</column>
+            <column type="string" name="department">Human Resources</column>
+            <column type="date" name="hire_date">2023-01-10</column>
+            <column type="string" name="position">HR Coordinator</column>
+            <column type="decimal" name="salary">55000.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Luca Marino</column>
+            <column type="numeric" name="employee_id">3046</column>
+            <column type="string" name="department">Sales</column>
+            <column type="date" name="hire_date">2020-04-05</column>
+            <column type="string" name="position">Sales Representative</column>
+            <column type="decimal" name="salary">61500.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Elena Conti</column>
+            <column type="numeric" name="employee_id">3047</column>
+            <column type="string" name="department">IT</column>
+            <column type="date" name="hire_date">2021-09-15</column>
+            <column type="string" name="position">System Administrator</column>
+            <column type="decimal" name="salary">70000.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Matteo Ferrari</column>
+            <column type="numeric" name="employee_id">3048</column>
+            <column type="string" name="department">Marketing</column>
+            <column type="date" name="hire_date">2022-07-20</column>
+            <column type="string" name="position">Digital Marketing Specialist</column>
+            <column type="decimal" name="salary">59000.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Chiara Esposito</column>
+            <column type="numeric" name="employee_id">3049</column>
+            <column type="string" name="department">Finance</column>
+            <column type="date" name="hire_date">2018-12-03</column>
+            <column type="string" name="position">Senior Accountant</column>
+            <column type="decimal" name="salary">71500.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Francesco Ricci</column>
+            <column type="numeric" name="employee_id">3050</column>
+            <column type="string" name="department">Operations</column>
+            <column type="date" name="hire_date">2020-10-11</column>
+            <column type="string" name="position">Operations Manager</column>
+            <column type="decimal" name="salary">75000.00</column>
+        </record>
+        <record>
+            <column type="string" name="employee_name">Valentina Martini</column>
+            <column type="numeric" name="employee_id">3051</column>
+            <column type="string" name="department">Customer Support</column>
+            <column type="date" name="hire_date">2022-02-15</column>
+            <column type="string" name="position">Support Specialist</column>
+            <column type="decimal" name="salary">52000.00</column>
+        </record>
+    </section2>
+
+    <section3>
+        <record>
+            <column type="string" name="city">Milano</column>
+            <column type="numeric" name="population">1396522</column>
+            <column type="decimal" name="area_sqkm">181.67</column>
+            <column type="string" name="region">Lombardia</column>
+            <column type="numeric" name="postal_code">20100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Roma</column>
+            <column type="numeric" name="population">2872800</column>
+            <column type="decimal" name="area_sqkm">1285.31</column>
+            <column type="string" name="region">Lazio</column>
+            <column type="numeric" name="postal_code">00100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Napoli</column>
+            <column type="numeric" name="population">962589</column>
+            <column type="decimal" name="area_sqkm">117.27</column>
+            <column type="string" name="region">Campania</column>
+            <column type="numeric" name="postal_code">80100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Torino</column>
+            <column type="numeric" name="population">875698</column>
+            <column type="decimal" name="area_sqkm">130.17</column>
+            <column type="string" name="region">Piemonte</column>
+            <column type="numeric" name="postal_code">10100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Palermo</column>
+            <column type="numeric" name="population">663401</column>
+            <column type="decimal" name="area_sqkm">158.88</column>
+            <column type="string" name="region">Sicilia</column>
+            <column type="numeric" name="postal_code">90100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Genova</column>
+            <column type="numeric" name="population">574532</column>
+            <column type="decimal" name="area_sqkm">243.60</column>
+            <column type="string" name="region">Liguria</column>
+            <column type="numeric" name="postal_code">16100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Bologna</column>
+            <column type="numeric" name="population">391984</column>
+            <column type="decimal" name="area_sqkm">140.86</column>
+            <column type="string" name="region">Emilia-Romagna</column>
+            <column type="numeric" name="postal_code">40100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Firenze</column>
+            <column type="numeric" name="population">382258</column>
+            <column type="decimal" name="area_sqkm">102.41</column>
+            <column type="string" name="region">Toscana</column>
+            <column type="numeric" name="postal_code">50100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Bari</column>
+            <column type="numeric" name="population">320862</column>
+            <column type="decimal" name="area_sqkm">117.39</column>
+            <column type="string" name="region">Puglia</column>
+            <column type="numeric" name="postal_code">70100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+        <record>
+            <column type="string" name="city">Catania</column>
+            <column type="numeric" name="population">311584</column>
+            <column type="decimal" name="area_sqkm">180.88</column>
+            <column type="string" name="region">Sicilia</column>
+            <column type="numeric" name="postal_code">95100</column>
+            <column type="string" name="country">Italy</column>
+        </record>
+    </section3>
+
+    <section4>
+        <record>
+            <column type="string" name="book_title">Il Nome della Rosa</column>
+            <column type="string" name="author">Umberto Eco</column>
+            <column type="numeric" name="publication_year">1980</column>
+            <column type="string" name="genre">Historical Mystery</column>
+            <column type="numeric" name="pages">512</column>
+            <column type="string" name="publisher">Bompiani</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">La Storia</column>
+            <column type="string" name="author">Elsa Morante</column>
+            <column type="numeric" name="publication_year">1974</column>
+            <column type="string" name="genre">Historical Fiction</column>
+            <column type="numeric" name="pages">714</column>
+            <column type="string" name="publisher">Einaudi</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">Se una notte d'inverno un viaggiatore</column>
+            <column type="string" name="author">Italo Calvino</column>
+            <column type="numeric" name="publication_year">1979</column>
+            <column type="string" name="genre">Postmodern Literature</column>
+            <column type="numeric" name="pages">260</column>
+            <column type="string" name="publisher">Einaudi</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">Il Gattopardo</column>
+            <column type="string" name="author">Giuseppe Tomasi di Lampedusa</column>
+            <column type="numeric" name="publication_year">1958</column>
+            <column type="string" name="genre">Historical Fiction</column>
+            <column type="numeric" name="pages">336</column>
+            <column type="string" name="publisher">Feltrinelli</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">La Coscienza di Zeno</column>
+            <column type="string" name="author">Italo Svevo</column>
+            <column type="numeric" name="publication_year">1923</column>
+            <column type="string" name="genre">Psychological Fiction</column>
+            <column type="numeric" name="pages">367</column>
+            <column type="string" name="publisher">Cappelli</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">Gomorra</column>
+            <column type="string" name="author">Roberto Saviano</column>
+            <column type="numeric" name="publication_year">2006</column>
+            <column type="string" name="genre">Non-fiction</column>
+            <column type="numeric" name="pages">331</column>
+            <column type="string" name="publisher">Mondadori</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">I Promessi Sposi</column>
+            <column type="string" name="author">Alessandro Manzoni</column>
+            <column type="numeric" name="publication_year">1840</column>
+            <column type="string" name="genre">Historical Novel</column>
+            <column type="numeric" name="pages">720</column>
+            <column type="string" name="publisher">Tipografia Guglielmini e Redaelli</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">L'amica geniale</column>
+            <column type="string" name="author">Elena Ferrante</column>
+            <column type="numeric" name="publication_year">2011</column>
+            <column type="string" name="genre">Coming-of-age</column>
+            <column type="numeric" name="pages">336</column>
+            <column type="string" name="publisher">E/O</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">Il Codice da Vinci</column>
+            <column type="string" name="author">Dan Brown</column>
+            <column type="numeric" name="publication_year">2003</column>
+            <column type="string" name="genre">Thriller</column>
+            <column type="numeric" name="pages">528</column>
+            <column type="string" name="publisher">Mondadori</column>
+        </record>
+        <record>
+            <column type="string" name="book_title">Novecento</column>
+            <column type="string" name="author">Alessandro Baricco</column>
+            <column type="numeric" name="publication_year">1994</column>
+            <column type="string" name="genre">Monologue</column>
+            <column type="numeric" name="pages">64</column>
+            <column type="string" name="publisher">Feltrinelli</column>
+        </record>
+    </section4>
+
+    <section5>
+        <record>
+            <column type="string" name="restaurant_name">Trattoria da Luigi</column>
+            <column type="string" name="cuisine">Italian</column>
+            <column type="decimal" name="average_price">35.50</column>
+            <column type="numeric" name="rating">4.7</column>
+            <column type="string" name="location">Via Roma 23, Milano</column>
+            <column type="string" name="phone_number">+39 02 1234567</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">Sushi&nbsp;King</column>
+            <column type="string" name="cuisine">Japanese</column>
+            <column type="decimal" name="average_price">45.00</column>
+            <column type="numeric" name="rating">4.5</column>
+            <column type="string" name="location">Corso Venezia 12, Milano</column>
+            <column type="string" name="phone_number">+39 02 9876543</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">El Mariachi</column>
+            <column type="string" name="cuisine">Mexican</column>
+            <column type="decimal" name="average_price">30.75</column>
+            <column type="numeric" name="rating">4.2</column>
+            <column type="string" name="location">Via Torino 45, Milano</column>
+            <column type="string" name="phone_number">+39 02 5557890</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">La Pergola</column>
+            <column type="string" name="cuisine">Mediterranean</column>
+            <column type="decimal" name="average_price">65.00</column>
+            <column type="numeric" name="rating">4.9</column>
+            <column type="string" name="location">Via dei Condotti 16, Roma</column>
+            <column type="string" name="phone_number">+39 06 1122334</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">Sapori di Mare</column>
+            <column type="string" name="cuisine">Seafood</column>
+            <column type="decimal" name="average_price">55.25</column>
+            <column type="numeric" name="rating">4.6</column>
+            <column type="string" name="location">Lungomare Caracciolo 8, Napoli</column>
+            <column type="string" name="phone_number">+39 081 5544332</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">Le Petit Bistrot</column>
+            <column type="string" name="cuisine">French</column>
+            <column type="decimal" name="average_price">> 60.00</column>
+            <column type="numeric" name="rating">4.7</column>
+            <column type="string" name="location">Via Monte Napoleone 22, Milano</column>
+            <column type="string" name="phone_number">+39 02 6789012</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">Tandoori Palace</column>
+            <column type="string" name="cuisine">Indian</column>
+            <column type="decimal" name="average_price">28.50</column>
+            <column type="numeric" name="rating">4.3</column>
+            <column type="string" name="location">Via Padova 78, Milano</column>
+            <column type="string" name="phone_number">+39 02 3344556</column>
+        </record>
+        <record>
+            <column type="string" name="restaurant_name">Pizzeria Napoli</column>
+            <column type="string" name="cuisine">Pizza</column>
+            <column type="decimal" name="average_price">
+                < 22.00</column>
+<column type="numeric" name="rating">4.8</column>
+                <column type="string" name="location">Corso Umberto 32, Napoli</column>
+                <column type="string" name="phone_number">+39 081 1122334</column>
+            </record>
+            <record>
+                <column type="string" name="restaurant_name">Dragon House</column>
+                <column type="string" name="cuisine">Chinese</column>
+                <column type="decimal" name="average_price">25.75</column>
+                <column type="numeric" name="rating">4.1</column>
+                <column type="string" name="location">Via Paolo Sarpi 15, Milano</column>
+                <column type="string" name="phone_number">+39 02 7788990</column>
+            </record>
+            <record>
+                <column type="string" name="restaurant_name">Osteria del Tempo Perso</column>
+                <column type="string" name="cuisine">Traditional Italian</column>
+                <column type="decimal" name="average_price">40.50</column>
+                <column type="numeric" name="rating">4.6</column>
+                <column type="string" name="location">Via Dante 9, Firenze</column>
+                <column type="string" name="phone_number">+39 055 6677889</column>
+            </record>
+        </section5>
+    </root>
