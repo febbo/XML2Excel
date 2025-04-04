@@ -95,7 +95,7 @@ def repair_xml_entities(xml_path):
     with open(output_path, "w", encoding="utf-8") as file:
         file.write(repaired_content)
 
-    print(f"File XML riparato salvato come: {output_path}")
+    print(f"Repaired XML file saved as: {output_path}")
     return output_path
 
 
@@ -115,22 +115,22 @@ def main():
 
     # Prompt user for XML file name
     xml_file = input(
-        "Inserisci il nome del file XML (deve essere nella stessa cartella): "
+        "Enter the XML file name (must be in the same folder) with extension xml: "
     )
     xml_path = os.path.join(script_dir, xml_file)
 
     # Validate file existence
     if not os.path.isfile(xml_path):
-        print(f"Errore: Il file {xml_file} non esiste nella cartella {script_dir}")
+        print(f"Error: The file {xml_file} does not exist in the folder {script_dir}")
         return
 
     try:
-        print("Riparazione del file XML in corso...")
+        print("Repairing the XML file...")
         repaired_xml_path = repair_xml_entities(xml_path)
 
         # Prepare Excel output filename
         excel_output = input(
-            "Inserisci il nome del file Excel di output (o premi Invio per usare lo stesso nome): "
+            "Enter the output Excel file name (or press Enter to use the same name): "
         ).strip()
         if not excel_output:
             excel_output = (
@@ -141,7 +141,7 @@ def main():
 
         excel_path = os.path.join(script_dir, excel_output)
 
-        print("Parsing del file XML riparato...")
+        print("Parsing the repaired XML file...")
         parser = ET.XMLParser(encoding="utf-8")
         tree = ET.parse(repaired_xml_path, parser)
         root = tree.getroot()
@@ -150,7 +150,7 @@ def main():
         wb = Workbook()
         wb.remove(wb.active)
 
-        print("Creazione dei fogli Excel...")
+        print("Creating Excel sheets...")
 
         # Process each second-level element in the XML structure
         for second_level in root:
@@ -206,15 +206,15 @@ def main():
                 row_idx += 1
 
             print(
-                f"Foglio '{sheet_name}' creato con {record_count} record e {len(column_names)} colonne"
+                f"Sheet '{sheet_name}' created with {record_count} records and {len(column_names)} columns"
             )
 
         # Save the completed Excel workbook
         wb.save(excel_path)
-        print(f"File Excel creato con successo: {excel_output}")
+        print(f"Excel file successfully created: {excel_output}")
 
     except Exception as e:
-        print(f"Si è verificato un errore: {e}")
+        print(f"An error occurred: {e}")
         import traceback
 
         traceback.print_exc()
